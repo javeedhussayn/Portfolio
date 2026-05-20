@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Javeed Hussain Shaik — Senior Power BI Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f7f5f0;
+    --bg2: #eeebe3;
+    --bg3: #e5e1d8;
+    --ink: #1a1a18;
+    --ink2: #4a4a45;
+    --ink3: #8a8a82;
+    --teal: #1a6b5c;
+    --teal-light: #e8f4f1;
+    --teal-mid: #2d9c87;
+    --border: rgba(26,26,24,0.1);
+    --border2: rgba(26,26,24,0.06);
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Manrope', system-ui, sans-serif;
+    --max: 960px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 3rem;
+    background: rgba(247,245,240,0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.4rem; font-weight: 600;
+    color: var(--ink); text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.72rem; letter-spacing: 0.13em;
+    text-transform: uppercase; font-weight: 600;
+    color: var(--ink3); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-cta {
+    font-size: 0.72rem; letter-spacing: 0.1em;
+    text-transform: uppercase; font-weight: 600;
+    background: var(--teal); color: #fff;
+    padding: 0.5rem 1.25rem; border-radius: 2rem;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--teal-mid); }
+
+  /* SECTIONS */
+  section { padding: 7rem 3rem; max-width: var(--max); margin: 0 auto; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    padding-top: 8rem;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding-left: 3rem; padding-right: 3rem;
+  }
+  .hero-left {}
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-size: 0.7rem; letter-spacing: 0.16em;
+    text-transform: uppercase; font-weight: 700;
+    color: var(--teal);
+    background: var(--teal-light);
+    padding: 0.35rem 0.9rem; border-radius: 2rem;
+    margin-bottom: 1.75rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--teal);
+  }
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .hero-name strong { font-weight: 600; display: block; }
+  .hero-desc {
+    font-size: 0.95rem; color: var(--ink2);
+    line-height: 1.8; margin-bottom: 2.5rem;
+    max-width: 420px;
+  }
+  .hero-cta { display: flex; gap: 0.875rem; flex-wrap: wrap; }
+  .btn-teal {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: var(--teal); color: #fff;
+    padding: 0.75rem 1.75rem; border-radius: 0.375rem;
+    font-size: 0.8rem; font-weight: 600; text-decoration: none;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-teal:hover { background: var(--teal-mid); transform: translateY(-2px); }
+  .btn-border {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    border: 1.5px solid var(--border); color: var(--ink2);
+    padding: 0.75rem 1.75rem; border-radius: 0.375rem;
+    font-size: 0.8rem; font-weight: 600; text-decoration: none;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-border:hover { border-color: var(--teal); color: var(--teal); }
+
+  /* HERO RIGHT — STATS CARD */
+  .hero-right {}
+  .stats-card {
+    background: var(--ink);
+    border-radius: 1.25rem;
+    padding: 2.75rem;
+    color: #fff;
+  }
+  .stats-card-label {
+    font-size: 0.68rem; letter-spacing: 0.14em;
+    text-transform: uppercase; font-weight: 600;
+    color: rgba(255,255,255,0.4); margin-bottom: 2rem;
+  }
+  .stats-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2rem; margin-bottom: 2.5rem;
+  }
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 3.25rem; font-weight: 600;
+    line-height: 1; color: #fff;
+    letter-spacing: -0.03em;
+  }
+  .stat-num span { color: var(--teal-mid); }
+  .stat-label {
+    font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase; font-weight: 500;
+    color: rgba(255,255,255,0.4); margin-top: 0.35rem;
+  }
+  .skills-pills {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .pill {
+    font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0.75rem; border-radius: 2rem;
+    background: rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.65);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .pill.active {
+    background: var(--teal); color: #fff; border-color: var(--teal);
+  }
+
+  /* SECTION HEADER */
+  .section-label {
+    font-size: 0.68rem; letter-spacing: 0.16em;
+    text-transform: uppercase; font-weight: 700;
+    color: var(--teal); margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    line-height: 1.1; letter-spacing: -0.02em;
+    color: var(--ink); font-weight: 300;
+    margin-bottom: 0.75rem;
+  }
+  h2 strong { font-weight: 600; }
+  .section-intro {
+    font-size: 0.9rem; color: var(--ink3);
+    max-width: 560px; margin-bottom: 3.5rem; line-height: 1.75;
+  }
+
+  /* ABOUT STRIP */
+  #about {
+    background: var(--bg2); max-width: 100%; padding: 5rem 3rem;
+  }
+  #about > div {
+    max-width: var(--max); margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start;
+  }
+  .about-left h3 {
+    font-family: var(--font-display);
+    font-size: 2rem; font-weight: 300; color: var(--ink); line-height: 1.2;
+  }
+  .about-left h3 strong { font-weight: 600; display: block; }
+  .about-right p {
+    font-size: 0.95rem; color: var(--ink2); line-height: 1.85;
+    margin-bottom: 1.25rem;
+  }
+  .about-right p:last-child { margin-bottom: 0; }
+
+  /* SKILLS */
+  #skills { background: var(--bg); max-width: 100%; padding: 7rem 3rem; }
+  #skills > div { max-width: var(--max); margin: 0 auto; }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+  }
+  .skill-card {
+    background: var(--bg);
+    padding: 2rem 1.75rem;
+    transition: background 0.2s;
+  }
+  .skill-card:hover { background: var(--teal-light); }
+  .skill-icon {
+    width: 40px; height: 40px; border-radius: 0.5rem;
+    background: var(--teal-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; margin-bottom: 1.1rem;
+    transition: background 0.2s;
+  }
+  .skill-card:hover .skill-icon { background: rgba(26,107,92,0.15); }
+  .skill-title { font-size: 0.9rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+  .skill-desc { font-size: 0.82rem; color: var(--ink3); line-height: 1.65; }
+
+  /* EXPERIENCE */
+  .exp-grid { display: flex; flex-direction: column; gap: 0; }
+  .exp-item {
+    display: grid; grid-template-columns: 200px 1fr;
+    gap: 2.5rem; padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border2);
+    transition: background 0.2s;
+  }
+  .exp-item:first-child { border-top: 1px solid var(--border2); }
+  .exp-left {}
+  .exp-period {
+    font-size: 0.72rem; letter-spacing: 0.08em;
+    text-transform: uppercase; font-weight: 600;
+    color: var(--ink3); margin-bottom: 0.4rem;
+  }
+  .exp-company {
+    font-size: 0.85rem; font-weight: 700;
+    color: var(--teal); margin-bottom: 0.3rem;
+  }
+  .exp-location {
+    font-size: 0.75rem; color: var(--ink3);
+  }
+  .exp-right {}
+  .exp-role {
+    font-family: var(--font-display);
+    font-size: 1.55rem; font-weight: 600;
+    color: var(--ink); line-height: 1.15;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.01em;
+  }
+  .exp-desc {
+    font-size: 0.88rem; color: var(--ink2); line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  .exp-achievements {
+    list-style: none; margin-bottom: 1.1rem;
+  }
+  .exp-achievements li {
+    font-size: 0.85rem; color: var(--ink2);
+    padding-left: 1rem; position: relative;
+    margin-bottom: 0.45rem; line-height: 1.65;
+  }
+  .exp-achievements li::before {
+    content: '→'; position: absolute; left: 0;
+    color: var(--teal); font-size: 0.75rem;
+    top: 0.08rem;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tag {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em;
+    padding: 0.2rem 0.65rem; border-radius: 0.25rem;
+    background: var(--teal-light); color: var(--teal);
+  }
+
+  /* CERTS + EDU */
+  #creds { background: var(--bg2); max-width: 100%; padding: 7rem 3rem; }
+  #creds > div { max-width: var(--max); margin: 0 auto; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+  .cert-list { display: flex; flex-direction: column; gap: 1rem; }
+  .cert-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.25rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 0.625rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .cert-item:hover { border-color: var(--teal); transform: translateX(4px); }
+  .cert-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--teal); flex-shrink: 0; margin-top: 0.45rem;
+  }
+  .cert-name { font-size: 0.85rem; font-weight: 600; color: var(--ink); line-height: 1.4; }
+  .cert-code { font-size: 0.72rem; color: var(--teal); font-weight: 700; margin-top: 0.2rem; }
+  .edu-list { display: flex; flex-direction: column; gap: 1.5rem; }
+  .edu-item { padding-bottom: 1.5rem; border-bottom: 1px solid var(--border2); }
+  .edu-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .edu-degree { font-size: 0.9rem; font-weight: 700; color: var(--ink); margin-bottom: 0.25rem; }
+  .edu-uni { font-size: 0.82rem; color: var(--ink2); margin-bottom: 0.2rem; }
+  .edu-year { font-size: 0.72rem; color: var(--ink3); font-weight: 600; letter-spacing: 0.06em; }
+
+  /* CONTACT */
+  #contact {
+    background: var(--ink); max-width: 100%; padding: 7rem 3rem;
+  }
+  #contact > div { max-width: var(--max); margin: 0 auto; }
+  #contact .section-label { color: var(--teal-mid); }
+  #contact h2 { color: #fff; }
+  #contact h2 strong { color: var(--teal-mid); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+  .contact-text { font-size: 0.9rem; color: rgba(255,255,255,0.45); line-height: 1.85; margin-bottom: 2.5rem; }
+  .contact-item {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 1.25rem; text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .contact-item:hover { opacity: 0.8; }
+  .contact-icon {
+    width: 42px; height: 42px; border-radius: 0.5rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; flex-shrink: 0;
+  }
+  .contact-detail-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; color: rgba(255,255,255,0.3); }
+  .contact-detail-val { font-size: 0.88rem; color: rgba(255,255,255,0.8); font-weight: 500; }
+  .contact-right {}
+  .contact-right h3 {
+    font-family: var(--font-display); font-size: 2.25rem;
+    font-weight: 300; color: #fff; line-height: 1.2; margin-bottom: 1rem;
+  }
+  .contact-right h3 strong { font-weight: 600; }
+  .contact-right p { font-size: 0.88rem; color: rgba(255,255,255,0.4); margin-bottom: 2.5rem; line-height: 1.75; }
+  .availability-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem; border-radius: 2rem;
+    background: rgba(45,156,135,0.15);
+    color: var(--teal-mid);
+    border: 1px solid rgba(45,156,135,0.3);
+    margin-bottom: 2rem;
+  }
+  .availability-badge::before {
+    content: ''; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--teal-mid);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  footer {
+    padding: 1.75rem 3rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.72rem; color: rgba(255,255,255,0.25);
+    max-width: var(--max); margin: 0 auto;
+    background: var(--ink);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fu { animation: fadeUp 0.75s cubic-bezier(0.22,1,0.36,1) both; }
+  .d1 { animation-delay: 0.1s; }
+  .d2 { animation-delay: 0.22s; }
+  .d3 { animation-delay: 0.36s; }
+  .d4 { animation-delay: 0.5s; }
+  .d5 { animation-delay: 0.65s; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links, .nav-cta { display: none; }
+    #hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; min-height: auto; gap: 3rem; }
+    section { padding: 4rem 1.5rem; }
+    #about, #skills, #creds, #contact { padding: 4rem 1.5rem; }
+    #about > div { grid-template-columns: 1fr; gap: 2rem; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.75rem; }
+    .two-col { grid-template-columns: 1fr; gap: 3rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">Javeed Hussain Shaik</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#creds">Credentials</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow fu">Available for opportunities</div>
+    <div class="hero-name fu d1">
+      Javeed<br>Hussain<br><strong>Shaik</strong>
+    </div>
+    <p class="hero-desc fu d2">
+      Senior Power BI Developer with 7+ years of experience turning complex, multi-source data into dashboards that drive real business outcomes. Microsoft-certified across PL-300, DP-600, and DP-700.
+    </p>
+    <div class="hero-cta fu d3">
+      <a href="#contact" class="btn-teal">Get in touch →</a>
+      <a href="#experience" class="btn-border">View work</a>
+    </div>
+  </div>
+
+  <div class="hero-right fu d4">
+    <div class="stats-card">
+      <div class="stats-card-label">At a glance</div>
+      <div class="stats-grid">
+        <div>
+          <div class="stat-num">7<span>+</span></div>
+          <div class="stat-label">Years experience</div>
+        </div>
+        <div>
+          <div class="stat-num">4</div>
+          <div class="stat-label">Companies served</div>
+        </div>
+        <div>
+          <div class="stat-num">4</div>
+          <div class="stat-label">Certifications</div>
+        </div>
+        <div>
+          <div class="stat-num">3</div>
+          <div class="stat-label">Microsoft badges</div>
+        </div>
+      </div>
+      <div class="skills-pills">
+        <span class="pill active">Power BI</span>
+        <span class="pill active">DAX</span>
+        <span class="pill active">Fabric</span>
+        <span class="pill">SQL</span>
+        <span class="pill">Data Modeling</span>
+        <span class="pill">M Query</span>
+        <span class="pill">ETL</span>
+        <span class="pill">Excel</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about">
+<div>
+  <div class="about-left">
+    <h3>Data is only as good as the<br><strong>story it tells.</strong></h3>
+  </div>
+  <div class="about-right">
+    <p>
+      I'm a Senior Power BI Developer based in Hyderabad with over 7 years of hands-on experience across the full BI stack — from raw data ingestion to executive-level dashboards. I've worked across pharma analytics, staffing intelligence, and algorithm-driven platforms, consistently delivering solutions that reduce reporting time, surface hidden insights, and enable faster decisions.
+    </p>
+    <p>
+      My technical depth spans Power BI, DAX, Power Query (M), SQL, and Microsoft Fabric. I don't just build reports — I architect data models, establish governance frameworks, and mentor junior analysts. Currently pursuing an MBA in Information Technology at JNTU to complement my engineering background with strategic business thinking.
+    </p>
+    <p>
+      I'm passionate about the intersection of data and decision-making. If your team is drowning in spreadsheets, guessing from gut-feel, or sitting on untapped data — let's talk.
+    </p>
+  </div>
+</div>
+</div>
+
+<!-- SKILLS -->
+<div id="skills">
+<div>
+  <p class="section-label">Expertise</p>
+  <h2>What I <strong>bring to the table</strong></h2>
+  <p class="section-intro">A full-spectrum BI skillset — from data pipeline to polished dashboard — built over 7 years of real-world enterprise delivery.</p>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">📊</div>
+      <div class="skill-title">Power BI Development</div>
+      <div class="skill-desc">Enterprise-grade dashboards, paginated reports, and embedded analytics. Deep expertise in visuals, bookmarks, row-level security, and incremental refresh.</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🗃️</div>
+      <div class="skill-title">Data Modeling</div>
+      <div class="skill-desc">Star and snowflake schemas, composite models, and relationship optimization. Designed models that cut query times by eliminating redundancy and enforcing clean grain.</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">⚡</div>
+      <div class="skill-title">DAX & M Query</div>
+      <div class="skill-desc">Advanced DAX — time intelligence, dynamic measures, calculated tables, and CALCULATE patterns. Power Query transformations that make messy source data report-ready.</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🗄️</div>
+      <div class="skill-title">SQL & ETL</div>
+      <div class="skill-desc">Complex multi-join queries, stored procedures, and ETL pipeline design across SQL Server, Azure SQL, and on-premise databases. Comfortable with large-volume data extraction.</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🧱</div>
+      <div class="skill-title">Microsoft Fabric</div>
+      <div class="skill-desc">Certified across DP-600 and DP-700. Hands-on with Lakehouse, Warehouse, Data Factory pipelines, Dataflows Gen2, and Real-Time Analytics in the Fabric ecosystem.</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📈</div>
+      <div class="skill-title">Analytics & Strategy</div>
+      <div class="skill-desc">Translating business questions into analytical frameworks. Experience managing data science teams, defining KPI hierarchies, and presenting insights to C-suite stakeholders.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-label">Career</p>
+  <h2>Professional <strong>experience</strong></h2>
+  <p class="section-intro">7+ years building BI solutions across pharma, staffing, and technology sectors — progressing from developer to senior architect and team lead.</p>
+
+  <div class="exp-grid">
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-period">Jul 2024 — Present</div>
+        <div class="exp-company">Beghou Consulting</div>
+        <div class="exp-location">Hyderabad, India</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Senior Power BI Developer</div>
+        <div class="exp-desc">Leading end-to-end BI delivery for a global pharma analytics firm. Own the full development lifecycle — from requirements gathering to deployment — for complex, multi-brand commercial dashboards used by field and leadership teams.</div>
+        <ul class="exp-achievements">
+          <li>Architected scalable data models supporting multi-country, multi-brand sales and performance reporting</li>
+          <li>Established Power BI governance standards including naming conventions, RLS policies, and workspace management</li>
+          <li>Collaborated directly with business stakeholders to translate commercial KPIs into self-service BI solutions</li>
+          <li>Optimized report performance through DAX query reduction and model partitioning strategies</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Data Modeling</span>
+          <span class="tag">RLS</span><span class="tag">Azure SQL</span><span class="tag">Pharma Analytics</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-period">May 2022 — Jul 2024</div>
+        <div class="exp-company">Redwood Algorithms</div>
+        <div class="exp-location">Bangalore, India</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Senior Power BI Developer & Data Science Manager</div>
+        <div class="exp-desc">Dual-track role combining senior BI development with team leadership. Managed a team of data analysts and junior developers while personally delivering complex, ML-integrated reporting solutions for technology clients.</div>
+        <ul class="exp-achievements">
+          <li>Led a team of 4 analysts — conducted code reviews, sprint planning, and performance mentoring</li>
+          <li>Integrated Python-based ML models into Power BI reports for predictive sales and churn analytics</li>
+          <li>Reduced client reporting cycles from weekly manual exports to real-time automated dashboards</li>
+          <li>Designed and documented data architecture standards adopted across all client engagements</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Power BI</span><span class="tag">Python</span><span class="tag">Machine Learning</span>
+          <span class="tag">SQL</span><span class="tag">Team Leadership</span><span class="tag">Data Architecture</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-period">May 2021 — May 2022</div>
+        <div class="exp-company">Randstad</div>
+        <div class="exp-location">Hyderabad, India</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Power BI Developer</div>
+        <div class="exp-desc">Delivered workforce and staffing analytics dashboards for one of the world's largest HR services firms. Built reporting infrastructure that gave recruiters and operations managers clear, real-time visibility into headcount, placements, and pipeline health.</div>
+        <ul class="exp-achievements">
+          <li>Built 12+ operational dashboards tracking recruiter performance, placement rates, and revenue pipeline</li>
+          <li>Automated weekly reporting workflows previously done manually in Excel, saving 8+ hours per week</li>
+          <li>Worked closely with HR operations to define and standardise KPI definitions across business units</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Power Query</span>
+          <span class="tag">Excel</span><span class="tag">Workforce Analytics</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-period">Jul 2019 — Mar 2021</div>
+        <div class="exp-company">Moonstone Info Tech</div>
+        <div class="exp-location">Hyderabad, India</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Power BI Developer</div>
+        <div class="exp-desc">Laid the technical foundation of a BI career by delivering client dashboards across retail, logistics, and services. Rapidly developed strong proficiency in data modeling, SQL-based data extraction, and end-to-end Power BI development.</div>
+        <ul class="exp-achievements">
+          <li>Developed client-facing dashboards across 6+ industries from brief to delivery</li>
+          <li>Built reusable data model templates that accelerated onboarding of new client projects by 40%</li>
+          <li>Gained deep expertise in Power Query ETL, complex DAX, and data source connectivity</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">ETL</span>
+          <span class="tag">Data Visualization</span><span class="tag">Power Query</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CERTS + EDU -->
+<div id="creds">
+<div>
+  <div class="two-col">
+    <div>
+      <p class="section-label">Certifications</p>
+      <h2><strong>Microsoft</strong><br>certified</h2>
+      <p class="section-intro" style="margin-bottom: 2rem;">Validated expertise across the Microsoft data and analytics ecosystem.</p>
+      <div class="cert-list">
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div>
+            <div class="cert-name">Analyzing and Visualizing Data with Microsoft Power BI</div>
+            <div class="cert-code">PL-300 · Microsoft</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div>
+            <div class="cert-name">Fabric Analytics Engineer Associate</div>
+            <div class="cert-code">DP-600 · Microsoft</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div>
+            <div class="cert-name">Fabric Analytics Engineer Associate</div>
+            <div class="cert-code">DP-700 · Microsoft</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div>
+            <div class="cert-name">Power BI Job Simulation</div>
+            <div class="cert-code">PwC Switzerland</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="section-label">Education</p>
+      <h2><strong>Academic</strong><br>background</h2>
+      <p class="section-intro" style="margin-bottom: 2rem;">Engineering foundation combined with ongoing business education.</p>
+      <div class="edu-list">
+        <div class="edu-item">
+          <div class="edu-degree">MBA — Systems (Information Technology)</div>
+          <div class="edu-uni">Jawaharlal Nehru Technological University</div>
+          <div class="edu-year">2024 — 2026 · In Progress</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Bachelor of Engineering</div>
+          <div class="edu-uni">Kandula Obul Reddy Memorial College of Engineering, JNTUA</div>
+          <div class="edu-year">2016 — 2019</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Diploma in Technical Education</div>
+          <div class="edu-uni">Sri Venkateswara University</div>
+          <div class="edu-year">2012 — 2015</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact">
+<div>
+  <p class="section-label">Contact</p>
+  <h2>Let's work <strong>together</strong></h2>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-text">
+        I'm currently open to senior Power BI, BI Architect, and Data Analytics Manager roles — full-time, contract, or freelance. If your team needs someone who can own data end to end, from model to boardroom, I'd love to connect.
+      </p>
+      <a href="mailto:javeedhussayn@outlook.com" class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-detail-label">Email</div>
+          <div class="contact-detail-val">javeedhussayn@outlook.com</div>
+        </div>
+      </a>
+      <a href="tel:9866118788" class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-detail-label">Phone</div>
+          <div class="contact-detail-val">+91 9866118788</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/javeedhussayn" target="_blank" class="contact-item">
+        <div class="contact-icon">🔗</div>
+        <div>
+          <div class="contact-detail-label">LinkedIn</div>
+          <div class="contact-detail-val">linkedin.com/in/javeedhussayn</div>
+        </div>
+      </a>
+    </div>
+    <div class="contact-right">
+      <div class="availability-badge">Open to opportunities</div>
+      <h3>Based in Hyderabad.<br><strong>Available globally.</strong></h3>
+      <p>Remote-first, open to hybrid or relocation for the right role. Quick to onboard, experienced with distributed teams, and deeply familiar with enterprise BI environments.</p>
+      <a href="mailto:javeedhussayn@outlook.com" class="btn-teal">Send a message →</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer>
+  <span>© 2025 Javeed Hussain Shaik · Senior Power BI Developer</span>
+  <span>Hyderabad, Telangana, India</span>
+</footer>
+
+</body>
+</html>
