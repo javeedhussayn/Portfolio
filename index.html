@@ -229,8 +229,7 @@
     background: #fff;
   }
   .dashboard-frame-container iframe {
-   
-   width: 100%;
+    width: 100%;
     height: 100%;
     border: none;
   }
@@ -398,12 +397,16 @@
   }
 
   footer {
-    padding: 1.75rem 3rem;
+    background: var(--ink);
     border-top: 1px solid rgba(255,255,255,0.06);
+    width: 100%;
+  }
+
+  footer > div {
+    padding: 1.75rem 3rem;
     display: flex; justify-content: space-between; align-items: center;
     font-size: 0.72rem; color: rgba(255,255,255,0.25);
     max-width: var(--max); margin: 0 auto;
-    background: var(--ink);
   }
 
   @keyframes fadeUp {
@@ -428,7 +431,7 @@
     .exp-item { grid-template-columns: 1fr; gap: 0.75rem; }
     .two-col { grid-template-columns: 1fr; gap: 3rem; }
     .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+    footer > div { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
   }
 </style>
 </head>
@@ -446,7 +449,6 @@
   <a href="#contact" class="nav-cta">Hire Me</a>
 </nav>
 
-<!-- HERO -->
 <div id="hero">
   <div class="hero-left">
     <div class="hero-eyebrow fu">Available for opportunities</div>
@@ -497,7 +499,6 @@
   </div>
 </div>
 
-<!-- ABOUT -->
 <div id="about">
 <div>
   <div class="about-left">
@@ -517,7 +518,6 @@
 </div>
 </div>
 
-<!-- FEATURED PORTFOLIO DASHBOARD -->
 <div id="portfolio">
 <div>
   <p class="section-label">Interactive Work</p>
@@ -529,7 +529,6 @@
 </div>
 </div>
 
-<!-- SKILLS -->
 <div id="skills">
 <div>
   <p class="section-label">Expertise</p>
@@ -570,7 +569,6 @@
 </div>
 </div>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <p class="section-label">Career</p>
   <h2>Professional <strong>experience</strong></h2>
@@ -667,7 +665,6 @@
   </div>
 </section>
 
-<!-- CERTS + EDU -->
 <div id="creds">
 <div>
   <div class="two-col">
@@ -733,7 +730,6 @@
 </div>
 </div>
 
-<!-- CONTACT -->
 <div id="contact">
 <div>
   <p class="section-label">Contact</p>
