@@ -216,6 +216,24 @@
   }
   .about-right p:last-child { margin-bottom: 0; }
 
+  /* INTERACTIVE PORTFOLIO DASHBOARD */
+  #portfolio { background: var(--bg); max-width: 100%; padding: 7rem 3rem; }
+  #portfolio > div { max-width: var(--max); margin: 0 auto; }
+  .dashboard-frame-container {
+    width: 100%;
+    aspect-ratio: 1024 / 1060;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 16px 40px rgba(26,26,24,0.04);
+    background: #fff;
+  }
+  .dashboard-frame-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
   /* SKILLS */
   #skills { background: var(--bg); max-width: 100%; padding: 7rem 3rem; }
   #skills > div { max-width: var(--max); margin: 0 auto; }
@@ -403,7 +421,7 @@
     .nav-links, .nav-cta { display: none; }
     #hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; min-height: auto; gap: 3rem; }
     section { padding: 4rem 1.5rem; }
-    #about, #skills, #creds, #contact { padding: 4rem 1.5rem; }
+    #about, #portfolio, #skills, #creds, #contact { padding: 4rem 1.5rem; }
     #about > div { grid-template-columns: 1fr; gap: 2rem; }
     .skills-grid { grid-template-columns: 1fr 1fr; }
     .exp-item { grid-template-columns: 1fr; gap: 0.75rem; }
@@ -419,6 +437,7 @@
   <a href="#hero" class="nav-logo">Javeed Hussain Shaik</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Dashboard</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#creds">Credentials</a></li>
@@ -493,6 +512,18 @@
     <p>
       I'm passionate about the intersection of data and decision-making. If your team is drowning in spreadsheets, guessing from gut-feel, or sitting on untapped data — let's talk.
     </p>
+  </div>
+</div>
+</div>
+
+<!-- FEATURED PORTFOLIO DASHBOARD -->
+<div id="portfolio">
+<div>
+  <p class="section-label">Interactive Work</p>
+  <h2>Featured <strong>Dashboard</strong></h2>
+  <p class="section-intro">Explore a live, interactive sales analytics suite showcasing complex metrics validation and operational layout architecture.</p>
+  <div class="dashboard-frame-container">
+    <iframe title="Sales Pipeline" src="https://app.powerbi.com/view?r=eyJrIjoiMTRkZDY3MGItMGNjNi00MGM2LThiZWMtNjk3NTVhZGQyNTk0IiwidCI6ImEyMmUyZGQ2LTdlYTktNGNjNi1iOTc4LTA0YjI4YTBmMmE3YyJ9" allowFullScreen="true"></iframe>
   </div>
 </div>
 </div>
